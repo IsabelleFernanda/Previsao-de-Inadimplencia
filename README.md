@@ -1,48 +1,94 @@
-# Previsão de Aprovação de Cartão de Crédito
+ Previsão de Inadimplência de Clientes
 
-## Descrição do Projeto
-Este projeto tem como objetivo desenvolver um modelo preditivo para prever a aprovação de solicitações de cartão de crédito com base em diversas variáveis de perfil dos clientes. O projeto inclui desde a análise exploratória dos dados até a implementação de algoritmos de machine learning.
+## 📌 Descrição do Projeto
+Este projeto tem como objetivo prever a **inadimplência de clientes** com base em características sociodemográficas e comportamentais. A iniciativa envolve desde a **análise exploratória dos dados** até a **construção e avaliação de modelos preditivos de Machine Learning**, com foco na **identificação de perfis de maior risco**.
 
-## Estrutura do Repositório
-- **notebooks/**: Contém o notebook `Previsao_de_aprovacao_de_cartao_de_credito.ipynb` com todas as etapas do projeto.
-- **dados/**: Contém os arquivos CSV utilizados no projeto.
+O modelo final visa **apoiar decisões estratégicas** na concessão de crédito, promovendo uma **gestão mais eficiente da carteira de clientes** e **redução de perdas financeiras**.
 
-## Etapas do Projeto
-### 1. Análise Exploratória de Dados (EDA)
-- Análise descritiva das variáveis.
-- Tratamento de valores ausentes e outliers.
+---
 
-### 2. Pré-processamento de Dados
+## 🗂️ Estrutura do Repositório
+```
+📁 dados/
+    └── arquivos CSV utilizados no projeto
+📁 notebooks/
+    └── Previsao_de_inadimplencia_de_clientes.ipynb
+📄 README.md
+```
+
+---
+
+## 🔍 Etapas do Projeto
+
+### 1. Entendimento do Problema e Análise Exploratória
+- Compreensão dos fatores associados à inadimplência.
+- Análise da variável alvo `default` (inadimplente ou adimplente).
+- Geração de visualizações para investigar o comportamento dos grupos.
+
+### 2. Pré-processamento e Preparação dos Dados
+- Tratamento de dados faltantes e outliers.
 - Codificação de variáveis categóricas.
 - Padronização de variáveis numéricas.
 
-### 3. Seleção de Features
-- Avaliação de correlação entre variáveis.
-- Seleção das features mais relevantes para o modelo.
+### 3. Seleção de Atributos Relevantes
+- Análise de correlações.
+- Avaliação de importância das variáveis por meio de SHAP values.
 
-### 4. Modelagem
-- Implementação de algoritmos como Random Forest e Decision Tree.
-- Avaliação de métricas como acurácia e matriz de confusão.
+### 4. Modelagem Preditiva
+- Treinamento de algoritmos como **Decision Tree** e **Random Forest**.
+- Otimização e validação do modelo **XGBoost**, com desempenho final:
+  - Acurácia: **93,88%**
+  - Recall: **90,61%**
+  - Precision: **74,67%**
+  - F1-Score: **81,87%**
+  - AUC-ROC: **98,59%**
 
-### 5. Resultados
-- Análise dos resultados obtidos e insights gerados.
-- Sugestões de melhorias futuras no modelo.
+### 5. Interpretação dos Resultados
+- Identificação de variáveis mais impactantes:
+  - `qtd_transacoes_12m`, `valor_transacoes_12m` e `meses_inativo_12m`.
+- Insights estratégicos para mitigação de risco.
 
-## Tecnologias Utilizadas
-- Python
-- Pandas, NumPy para manipulação de dados
-- Seaborn, Matplotlib para visualização de dados
-- Scikit-Learn para modelagem de machine learning
+### 6. Relevância para o Negócio
+- Apoio à tomada de decisão na concessão de crédito.
+- Potencial de integração com sistemas de análise em tempo real.
+- Propostas de melhorias e monitoramento contínuo.
 
-## Como Executar o Projeto
-1. Clone este repositório.
-2. Instale as bibliotecas necessárias utilizando `pip install -r requirements.txt`.
-3. Execute o notebook no seu ambiente Jupyter Notebook.
+---
 
-## Contribuições
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
+## 🛠 Tecnologias Utilizadas
+- **Linguagem**: Python  
+- **Bibliotecas**:  
+  - Manipulação: `Pandas`, `NumPy`, `Plotly`  
+  - Visualização: `Matplotlib`, `Seaborn`  
+  - Modelagem: `Scikit-Learn`, `XGBoost`, `SHAP`
 
-## Autor
-Isabelle Fernanda – [LinkedIn](https://www.linkedin.com/in/IsabelleFernanda)  
-Projeto desenvolvido como parte do curso de Ciência de Dados da EBAC.
+---
 
+## 🚀 Como Executar o Projeto
+
+1. Clone este repositório:
+```bash
+git clone https://github.com/IsabelleFernanda/Previsao-de-Inadimplencia/.git
+```
+
+2. Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
+
+3. Execute o notebook:
+Abra o arquivo `Previsao_de_inadimplencia_de_clientes.ipynb` no Google Colab, Jupyter Notebook ou Jupyter Lab e execute as células na ordem.
+
+---
+
+## 💡 Contribuições
+Contribuições são bem-vindas!  
+Se você tiver sugestões, ideias ou melhorias, fique à vontade para abrir uma *issue* ou enviar um *pull request*.
+
+---
+
+## 👩‍💻 Autora
+
+**Isabelle Fernanda**  
+[Cientista de Dados em formação pela EBAC](https://www.linkedin.com/in/isabellefernandasilva/)  
+Projeto desenvolvido como parte da formação em Ciência de Dados – EBAC (Escola Britânica de Artes Criativas e Tecnologia)
